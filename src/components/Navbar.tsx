@@ -4,6 +4,7 @@ import { assets } from "../assets/assets";
 const Navbar: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  // منع التمرير عند فتح قائمة الموبايل
   useEffect(() => {
     document.body.style.overflow = showMobileMenu ? "hidden" : "auto";
     return () => {
@@ -13,8 +14,9 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="absolute top-0 left-0 w-full z-20">
+      {/* Navbar container */}
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
-        {/* Logo نصي مع تأثيرات */}
+        {/* Logo نصي مع تأثير */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide hover:text-blue-400 transition-shadow shadow-md hover:shadow-lg cursor-pointer">
           Moaz
         </h1>
@@ -22,23 +24,23 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-7 text-white">
           <li>
-            <a href="#Header" className="hover:text-blue-400">
+            <a href="#Header" className="hover:text-blue-400 transition-colors">
               Home
             </a>
           </li>
           <li>
-            <a href="#About" className="hover:text-blue-400">
+            <a href="#About" className="hover:text-blue-400 transition-colors">
               About
             </a>
           </li>
           <li>
-            <a href="#Skills" className="hover:text-blue-400">
+            <a href="#Skills" className="hover:text-blue-400 transition-colors">
               Skills
             </a>
           </li>
           <li>
-            <a href="#Contact" className="hover:text-blue-400">
-            Contact
+            <a href="#Contact" className="hover:text-blue-400 transition-colors">
+              Contact
             </a>
           </li>
         </ul>
@@ -54,41 +56,47 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {showMobileMenu && (
-        <div className="md:hidden fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center gap-6 z-30 bg-black/50 backdrop-blur-sm">
-          <img
-            src={assets.cross_icon}
-            alt="close"
-            className="absolute top-4 left-4 w-6 cursor-pointer invert"
-            onClick={() => setShowMobileMenu(false)}
-          />
-          <a
-            href="#Header"
-            onClick={() => setShowMobileMenu(false)}
-            className="text-white text-xl hover:text-gray-300"
-          >
-            Home
-          </a>
-          <a
-            href="#About"
-            onClick={() => setShowMobileMenu(false)}
-            className="text-white text-xl hover:text-gray-300"
-          >
-            About
-          </a>
-          <a
-            href="#Projects"
-            onClick={() => setShowMobileMenu(false)}
-            className="text-white text-xl hover:text-gray-300"
-          >
-            Projects
-          </a>
-          <a
-            href="#Testimonials"
-            onClick={() => setShowMobileMenu(false)}
-            className="text-white text-xl hover:text-gray-300"
-          >
-            Testimonials
-          </a>
+        <div className="md:hidden fixed top-0 left-0 w-full z-30 bg-white shadow-md">
+          {/* Close icon */}
+          <div className="flex justify-end p-4">
+            <img
+              src={assets.cross_icon}
+              alt="close"
+              className="w-6 cursor-pointer"
+              onClick={() => setShowMobileMenu(false)}
+            />
+          </div>
+          {/* Mobile Links */}
+          <div className="flex flex-col items-center gap-4 pb-4">
+            <a
+              href="#Header"
+              onClick={() => setShowMobileMenu(false)}
+              className="text-black text-xl hover:text-gray-500 transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="#About"
+              onClick={() => setShowMobileMenu(false)}
+              className="text-black text-xl hover:text-gray-500 transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="#Skills"
+              onClick={() => setShowMobileMenu(false)}
+              className="text-black text-xl hover:text-gray-500 transition-colors"
+            >
+              Skills
+            </a>
+            <a
+              href="#Contact"
+              onClick={() => setShowMobileMenu(false)}
+              className="text-black text-xl hover:text-gray-500 transition-colors"
+            >
+              Contact
+            </a>
+          </div>
         </div>
       )}
     </div>
