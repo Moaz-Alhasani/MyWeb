@@ -38,11 +38,11 @@ const Header: React.FC = () => {
 
         {/* زر Contact */}
         <a
-          href="#contact"
-          className="px-6 py-2 bg-blue-500 text-white rounded-lg text-base sm:text-lg hover:bg-blue-600 transition"
-        >
-          Contact Me
-        </a>
+  href="#Contact" // نفس الـ id
+  className="px-6 py-2 bg-blue-500 text-white rounded-lg text-base sm:text-lg hover:bg-blue-600 transition"
+>
+  Contact Me
+</a>
       </div>
 
       {/* أنيميشن المؤشر */}
