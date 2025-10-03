@@ -127,7 +127,7 @@ const Header: React.FC = () => {
             </a>
             
             <a
-              href="#Skills"
+              href="#skills"
               className="px-8 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105"
             >
               View Skills
